@@ -141,7 +141,8 @@ class LogisticRegressionModel:
             docs.append(trd[key]["text"])
             y_values.append(trd[key]["senti"])
 
-        self.cvec = CountVectorizer(analyzer="char_wb")
+        # self.cvec = CountVectorizer(analyzer="char_wb")
+        self.cvec = CountVectorizer()
         X = self.cvec.fit_transform(docs)
         df = pd.DataFrame(X.toarray(), columns=self.cvec.get_feature_names())
 
@@ -203,7 +204,8 @@ class SVMModel:
             docs.append(trd[key]["text"])
             y_values.append(trd[key]["senti"])
 
-        self.cvec = CountVectorizer(analyzer="char_wb")
+        # self.cvec = CountVectorizer(analyzer="char_wb")
+        self.cvec = CountVectorizer()
         X = self.cvec.fit_transform(docs)
         df = pd.DataFrame(X.toarray(), columns=self.cvec.get_feature_names())
 
